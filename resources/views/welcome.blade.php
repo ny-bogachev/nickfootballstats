@@ -1,4 +1,4 @@
-<x-site-layout>
+<x-site-layout title="Matches">
 
     Hello football fans!
 
