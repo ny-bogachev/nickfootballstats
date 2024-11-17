@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-stone-300">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +15,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
+<body class="font-sans antialiased h-full">
 <!--
   This example requires updating your template:
 
   ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
   ```
 -->
 <div class="min-h-full">
