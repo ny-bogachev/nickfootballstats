@@ -21,4 +21,10 @@ class Article extends Model
     {
         return $this->belongsToMany(Team::class, 'article_team');
     }
+
+    // Model scopes--------
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('match_date')->where('match_date', '<=', now());
+    }
 }
