@@ -1,6 +1,5 @@
-<x-site-layout title="Recent Matches">
+<x-site-layout All Matches>
 
-    <div class="grid grid-cols-2 gap-x-8">
     @foreach($articles as $article)
         <a href="{{route('articles.show',$article->id)}}" class="mt-4">
             <h2 class="font-bold text-lg">{{$article->teams[0]->name}} vs {{$article->teams[1]->name}}</h2>
@@ -15,7 +14,6 @@
                 @endforeach
             </div>
             <p class="text-sm">{{$article->score}}</p>
-        </a>
     @endforeach
-    </div>
+
 </x-site-layout>
