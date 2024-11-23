@@ -2,7 +2,7 @@
 
     @foreach($articles as $article)
         <div class="mt-4">
-            <h2 class="font-bold text-lg">{{$article->title}}</h2>
+            <h2 class="font-bold text-lg">{{$article->teams[0]->name}} vs {{$article->teams[1]->name}}</h2>
             <div>
                 {{ \Carbon\Carbon::parse($article->match_date)->toDateString()}}
                 |
