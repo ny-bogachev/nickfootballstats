@@ -6,7 +6,12 @@
             <div>
                 {{ \Carbon\Carbon::parse($article->match_date)->toDateString()}}
                 |
-                {{$article->stadium->name}}
+                {{$article->stadium->name}} ({{$article->stadium->address}})
+            </div>
+            <div>
+                @foreach($article->teams as $team)
+                    <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs">{{$team->name}}</span>
+                @endforeach
             </div>
             <p class="text-sm">{{$article->score}}</p>
         </div>

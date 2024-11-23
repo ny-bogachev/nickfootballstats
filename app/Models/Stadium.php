@@ -9,4 +9,15 @@ class Stadium extends Model
 {
     /** @use HasFactory<\Database\Factories\StadiumFactory> */
     use HasFactory;
+
+    // Model relationships --------
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'article_id');
+    }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class, 'team_id');
+    }
 }
