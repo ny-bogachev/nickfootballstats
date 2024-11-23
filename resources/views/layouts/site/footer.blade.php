@@ -40,6 +40,6 @@
                 </svg>
             </a>
         </div>
-        <p class="mt-10 text-center text-sm/6 text-blue-600">&copy; 2024 Your Company, Inc. All rights reserved.</p>
+        <p class="mt-10 text-center text-sm/6 text-blue-600">&copy; 2024 NickDeepThought, Inc. All rights reserved.</p>
     </div>
 </footer>

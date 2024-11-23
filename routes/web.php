@@ -3,8 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', \App\Http\Controllers\WelcomeController::class);
-Route::get('articles/{id}',[\App\Http\Controllers\ArticleController::class, 'show']);
+Route::get('/', \App\Http\Controllers\WelcomeController::class)->name('welcome');
+Route::get('matches/{id}',[\App\Http\Controllers\ArticleController::class, 'show'])->name('articles.show');
 
 /*
 Route::get('/dashboard', function () {
