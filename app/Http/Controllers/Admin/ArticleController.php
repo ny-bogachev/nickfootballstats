@@ -95,6 +95,12 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $article = Article::find($id);
+
+        $article->delete();
+
+        session()->flash('success', 'Match ['.$article->title.'] article deleted successfully!');
+
+        return redirect()->route('admin.articles.index');
     }
 }
