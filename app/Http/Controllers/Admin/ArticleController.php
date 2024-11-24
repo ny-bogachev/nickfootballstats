@@ -40,6 +40,8 @@ class ArticleController extends Controller
             'stadia_id' => $request->stadia_id,
         ]);
 
+        session()->flash('success', 'Match ['.$article->title.'] article created successfully!');
+
         return redirect()->route('admin.articles.index');
     }
 
@@ -82,6 +84,8 @@ class ArticleController extends Controller
             'score' => $request->score,
             'stadia_id' => $request->stadia_id,
         ]);
+
+        session()->flash('success', 'Match ['.$article->title.'] article updated successfully!');
 
         return redirect()->route('admin.articles.index');
     }
