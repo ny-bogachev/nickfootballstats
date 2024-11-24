@@ -10,6 +10,8 @@ class Article extends Model
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
 
+    protected $fillable = ['title','score', 'stadia_id'];
+
     // Model relationships --------
 
     public function stadium()

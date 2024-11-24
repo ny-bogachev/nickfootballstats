@@ -13,7 +13,6 @@ class ArticleController extends Controller
         $articles = Article::all();
 
         return view('admin.articles.index', compact('articles'));
-        //
     }
 
     /**
@@ -21,7 +20,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.articles.create');
     }
 
     /**
@@ -29,7 +28,19 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string', 'min:4', 'max:255'],
+            'score' => ['required', 'string'],
+            'stadia_id' => ['required'],
+        ]);
+
+        $article = Article::create([
+            'title' => $request->title,
+            'score' => $request->score,
+            'stadia_id' => $request->stadia_id,
+        ]);
+
+        return redirect()->route('admin.articles.index');
     }
 
     /**
@@ -37,7 +48,9 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $article = Article::findOrFail($id);
+
+        return view('articles.show', compact('article'));
     }
 
     /**
@@ -56,7 +69,21 @@ class ArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string', 'min:4', 'max:255'],
+            'score' => ['required', 'string'],
+            'stadia_id' => ['required'],
+        ]);
+
+        $article = Article::find($id);
+
+        $article->update([
+            'title' => $request->title,
+            'score' => $request->score,
+            'stadia_id' => $request->stadia_id,
+        ]);
+
+        return redirect()->route('admin.articles.index');
     }
 
     /**

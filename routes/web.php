@@ -10,13 +10,16 @@ Route::get('matches',[\App\Http\Controllers\ArticleController::class, 'index'])-
 Route::get('matches/{id}',[\App\Http\Controllers\ArticleController::class, 'show'])->name('articles.show');
 
 // Authenticated routes
-Route::get('admin/matches',[\App\Http\Controllers\Admin\ArticleController::class, 'index'])->name('admin.articles.index');
-Route::get('admin/matches/{article}',[\App\Http\Controllers\Admin\ArticleController::class, 'show'])->name('admin.articles.show');
-Route::get('admin/matches/create',[\App\Http\Controllers\Admin\ArticleController::class, 'create'])->name('admin.articles.create');
-Route::post('admin/matches',[\App\Http\Controllers\Admin\ArticleController::class, 'store'])->name('admin.articles.store');
-Route::get('admin/matches/{article}/edit',[\App\Http\Controllers\Admin\ArticleController::class, 'edit'])->name('admin.articles.edit');
-Route::put('admin/matches/{article}',[\App\Http\Controllers\Admin\ArticleController::class, 'update'])->name('admin.articles.update');
-Route::delete('admin/matches/{article}',[\App\Http\Controllers\Admin\ArticleController::class, 'destroy'])->name('admin.articles.destroy');
+Route::resource('admin/matches', \App\Http\Controllers\Admin\ArticleController::class)
+    ->names([
+        'index' => 'admin.articles.index',
+        'show' => 'admin.articles.show',
+        'create' => 'admin.articles.create',
+        'store' => 'admin.articles.store',
+        'edit' => 'admin.articles.edit',
+        'update' => 'admin.articles.update',
+        'destroy' => 'admin.articles.destroy',
+    ]);
 
 /*
 Route::get('/dashboard', function () {
