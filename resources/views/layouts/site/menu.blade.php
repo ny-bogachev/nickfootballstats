@@ -8,10 +8,10 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="{{route('welcome')}}" class="rounded-md bg-green-400 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                        <a href="{{route('articles.index')}}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">All Matches</a>
-                        <a href="{{route('teams.index')}}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Teams</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Stadiums</a>
+                        <a href="{{route('welcome')}}" class="{{ request()->routeIs('welcome') ? 'bg-green-400 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium"> Home </a>
+                        <a href="{{route('articles.index')}}" class="{{ request()->routeIs('articles.index') ? 'bg-green-400 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium"> All Matches </a>
+                        <a href="{{route('teams.index')}}" class="{{ request()->routeIs('teams.index') ? 'bg-green-400 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium"> Teams </a>
+                        <a href="#" class="{{ request()->is('stadiums') ? 'bg-green-400 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium"> Stadiums </a>
                     </div>
                 </div>
             </div>
