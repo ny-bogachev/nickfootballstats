@@ -11,6 +11,7 @@ Route::get('matches/{id}',[\App\Http\Controllers\ArticleController::class, 'show
 
 // Authenticated routes
 Route::resource('admin/matches', \App\Http\Controllers\Admin\ArticleController::class)
+    ->middleware(['auth', 'verified'])
     ->names([
         'index' => 'admin.articles.index',
         'show' => 'admin.articles.show',
@@ -21,7 +22,7 @@ Route::resource('admin/matches', \App\Http\Controllers\Admin\ArticleController::
         'destroy' => 'admin.articles.destroy',
     ]);
 
-/*
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -33,4 +34,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-*/
+

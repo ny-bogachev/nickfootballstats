@@ -3,11 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Stadium;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,12 +23,16 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         Team::factory(10)->create();
 
-        foreach(Article::all() as $article) {
+        foreach (Article::all() as $article) {
             $list_of_teams = Team::inRandomOrder()->take(2)->get();
 
             $article->teams()->attach($list_of_teams);
         }
 
-
+        User::factory()->create([
+            'name' => 'John Doe',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('password'),
+        ]);
     }
 }

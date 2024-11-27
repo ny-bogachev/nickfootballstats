@@ -9,9 +9,9 @@
         </div>
     @endif
 
-    <table class="table-auto w-full border border-gray-300">
+    <table class="table-auto w-full border border-gray-400">
         <thead>
-        <tr class="bg-gray-300">
+        <tr class="bg-gray-400">
             <th>Title</th>
             <th>Actions</th>
         </tr>
