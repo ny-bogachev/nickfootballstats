@@ -9,6 +9,9 @@ Route::get('/', \App\Http\Controllers\WelcomeController::class)->name('welcome')
 Route::get('matches',[\App\Http\Controllers\ArticleController::class, 'index'])->name('articles.index');
 Route::get('matches/{id}',[\App\Http\Controllers\ArticleController::class, 'show'])->name('articles.show');
 
+Route::get('teams',[\App\Http\Controllers\TeamController::class, 'index'])->name('teams.index');
+Route::get('teams/{id}',[\App\Http\Controllers\TeamController::class, 'show'])->name('teams.show');
+
 // Authenticated routes
 Route::resource('admin/matches', \App\Http\Controllers\Admin\ArticleController::class)
     ->middleware(['auth', 'verified'])

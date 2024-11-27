@@ -19,6 +19,7 @@ class StadiumFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'address' => $this->faker->address(),
+            'team_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

@@ -18,8 +18,7 @@ class TeamFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'article_id' => $this->faker->numberBetween(1, 10),
-            'stadium_id' => $this->faker->numberBetween(1, 10),
+            'stadia_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

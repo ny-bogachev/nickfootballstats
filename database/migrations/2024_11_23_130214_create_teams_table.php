@@ -11,8 +11,7 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('article_id');
-            $table->integer('stadium_id');
+            $table->integer('stadia_id');
             $table->timestamps();
         });
     }

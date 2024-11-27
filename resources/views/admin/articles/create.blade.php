@@ -20,7 +20,7 @@
 
         <br/><br/>
 
-        <div class="w-full flex justify-end gap-x-8">
+        <div class="w-full flex justify-center gap-x-8">
             <a href="{{route('admin.articles.index')}}" class="text-xs text-gray-700 bg-gray-300 hover:bg-gray-200 px-4 py-2 rounded uppercase">Undo</a>
             <button type="submit" class="text-xs text-green-700 bg-green-300 hover:bg-green-200 px-4 py-2 rounded uppercase">Create match article</button>
         </div>
